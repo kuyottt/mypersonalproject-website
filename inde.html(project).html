@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY PERSONAL PORTFOLIO WEBSITE</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    body{
+      background: #000000;
+      color: #fff;
+    }
+    #header{
+      width: 100%;
+      height: 100vh;
+      background-image: url(images/BG1.png);
+      background-size: cover;
+      background-position: center;
+    }
+    .container{
+      padding: 10px 10%;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    nav ul li{
+      display: inline-block;
+      list-style: none;
+      margin: 30px 30px;
+    }
+    
+    nav ul li a{
+      color: #faf9f9ef;
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+    }
+
+    nav ul li a::after{
+      content: '';
+      width: 0%;
+      height: 3px;
+      background: #e90303da;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.5s;
+    }
+    nav ul li a:hover::after{
+      width: 100%;
+    }
+    .header-text{
+      margin-top: 20%;
+      font-size: 30px;
+    }
+    .header-text h1{
+      font-size: 250%;
+      margin-top: 20px;
+    }
+    .header-text h1 span{
+      color: #eb0f58;
+    }
+   
+    /* -----------about-------------*/
+    #about{
+      padding: 80px 0;  
+      color: #ababab;    
+    }
+    .row{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .about-col-1{
+      flex-basis: 25%;
+    }
+    .about-col-1 img{
+      width: 100%;
+      border-radius: 15px;
+    }
+    .about-col-2{
+      flex-basis: 60%;
+    }
+    .sub-title{
+      font-size: 60px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+
+   
+    /* -----------gallery-------------*/
+    #gallery{
+      padding: 50px 0;
+
+    }
+    .work-list{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+    }
+    .work{
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .work img{
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* -----------contact-------------*/
+    .contact-left{
+      flex-basis: 35%;
+    }
+    .contact-right{
+      flex-basis: 60%;
+    }
+    .contact-left p{
+      margin-top: 30px;
+    }
+    .contact-left p i{
+      color: #ff004f;
+      margin-right: 15px;
+      font-size: 25px;
+    }
+    .social-icons{
+      margin-top: 30px;
+    }
+    .social-icons a{
+      text-decoration: none;
+      font-size: 60px;
+      margin-right: 15px;
+      color: #ababab;
+      display: inline-block;
+      transition: transform 0.5s;
+    }
+    .social-icons a:hover{
+      color: #ff004f;
+      transform: translateY(-5px);
+    }
+    .btn.btn2{
+      display: inline-block;
+      background: #ff004f;
+    }
+    .contact-right form{
+      width: 100%;
+    }
+    form input, form textarea{
+      width: 100%;
+      border: none;
+      outline: none;
+      background: #262626;
+      padding: 15px;
+      margin: 15px 0;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 6px;
+    }
+    form input[type="submit"]{
+      padding: 14px 60px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+      background: #ff004f;
+      border: none;
+    }
+
+    /* -----------css for small screen-------------*/
+   @media only screen and (max-width: 600px){
+    #header{
+      background-image: url(images/BG1.png);
+    }
+    .header-text{
+         margin-top: 100%;
+         font-size: 16px;
+    }
+    .header-text h1{
+      font-size: 30px;
+    }
+   }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <div class="container">
+ <nav>  
+    <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><i class="fas fa-times" onclick="closemenu()"></i></li>
+   </ul>
+   <i class="fas fa-bars" onclick="openmenu()"></i>
+</nav>
+   <div class="header-text">
+     <p>Artist Designer</p>
+     <h1> Hi, I'm <span>Maria Gracia </span></h1>
+   </div>
+  </div>
+</div>
+
+<!-----------about---------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/mypic.jpg" alt="My Picture">
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>Hi! I am Mary Grace Rivera, a digital animator and illustrator located in Camarines Sur.
+               I am currently studying in Naga City, where I am pursuing a Bachelor of Science degree in Entertainment and Multimedia Computing at Bicol State College of Applied Sciences and Technology. 
+               I specialize in various art fields such as writing, graphic design, and others. Additionally, I am studying 3D modeling and digital illustration.
+                My ultimate goal is to become an animator, and I am determined to do everything in my power to improve my skills, expand my knowledge, and connect with fellow aspiring animators.
+                 I have one guiding principle: I create only when there's something meaningful to convey. My art is my statement, and it will always remain so.</p>           
+          </div>
+        </div>
+    </div>   
+</div>
+<!-----------gallery---------- -->
+<div id="gallery">
+  <div class="container">
+    <h1 class="sub-title">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="images/1.jpg" alt="Image 1">
+      </div>
+      <div class="work">
+        <img src="images/2.jpg" alt="Image 2">
+      </div>
+      <div class="work">
+        <img src="images/3.jpg" alt="Image 3">
+      </div>
+      <div class="work">
+        <img src="images/4.jpg" alt="Image 4">
+      </div>
+      <div class="work">
+        <img src="images/5.jpg" alt="Image 5">
+      </div>
+      <div class="work">
+        <img src="images/6.jpg" alt="Image 6">
+      </div>
+      <div class="work">
+        <img src="images/10.jpg" alt="Image 7">
+      </div>
+      <div class="work">
+        <img src="images/11.jpg" alt="Image 8">
+      </div>
+      <div class="work">
+        <img src="images/12.jpg" alt="Image 9">
+      </div>
+      <div class="work">
+        <img src="images/background (2).jpg" alt="Image 10">
+      </div>
+    </div>
+  </div> 
+</div>
+
+<!-----------contact---------- -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fas fa-paper-plane"></i> contact@example.com</p>
+          <p><i class="fas fa-phone-square-alt"></i> 09636559232</p>
+          <div class="social-icons">
+          <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter-square"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    <div class="contact-right">
+     <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+      
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required></textarea><br>
+      
+      <input type="submit" value="Submit">
+           
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----------footer---------- -->
+<footer>
+  <p>&copy; 2023 My Personal Portfolio Website | All rights reserved</p>
+</footer>
+
+<script>
+  function openmenu(){
+    document.getElementById("sidemenu").style.display="block";
+    document.getElementById("sidemenu").style.width="100%";
+    document.getElementById("sidemenu").style.height="100vh";
+    document.getElementById("sidemenu").style.position="fixed";
+    document.getElementById("sidemenu").style.top="0";
+    document.getElementById("sidemenu").style.left="0";
+    document.getElementById("sidemenu").style.backgroundColor="#000";
+    document.getElementById("sidemenu").style.zIndex="9999";
+  }
+  function closemenu(){
+    document.getElementById("sidemenu").style.display="none";
+  }
+</script>
+</body>
+</html>
